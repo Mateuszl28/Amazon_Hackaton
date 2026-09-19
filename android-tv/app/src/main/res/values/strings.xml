@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">What Did I Miss?</string>
+    <string name="catalog_title">What Did I Miss?</string>
+    <string name="catalog_subtitle">Spoiler-free answers about what you\'re watching</string>
+    <string name="loading_titles">Loading titles…</string>
+    <string name="titles_error">Can\'t reach the companion backend at %1$s</string>
+    <string name="hint_menu">☰  Companion</string>
+    <string name="chip_who">Who\'s that?</string>
+    <string name="chip_recap">What did I miss?</string>
+    <string name="chip_explain">Explain that</string>
+    <string name="chip_ask">Ask…</string>
+    <string name="ask_hint">Type a question and press Enter</string>
+    <string name="thinking">Thinking — only using what you\'ve already seen…</string>
+    <string name="spoiler_badge">🛡 Spoiler-free · up to %1$s</string>
+    <string name="hint_skipped">⏩ Skipped %1$s · ☰ for a recap</string>
+    <string name="first_seen">%1$s · first seen at %2$s</string>
+    <string name="hidden_from_ai">🛡 hidden from the AI</string>
+    <string name="seen_so_far">what you\'ve seen</string>
+    <string name="previously">Previously…</string>
+    <string name="error_answer">Couldn\'t get an answer: %1$s</string>
+</resources>

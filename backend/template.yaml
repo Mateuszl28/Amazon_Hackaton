@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Spoiler-free viewing companion backend (Fire TV)
+
+Parameters:
+  LlmModel:
+    Type: String
+    Default: anthropic.claude-opus-5
+
+Resources:
+  DataBucket:
+    Type: AWS::S3::Bucket
+
+  CompanionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: app.handler.lambda_handler
+      Runtime: python3.13
+      Architectures: [arm64]
+      MemorySize: 512
+      Timeout: 30
+      Environment:
+        Variables:
+          DATA_BUCKET: !Ref DataBucket
+          LLM_PROVIDER: bedrock
+          LLM_MODEL: !Ref LlmModel
+      Policies:
+        - S3ReadPolicy:
+            BucketName: !Ref DataBucket
+        - Statement:
+            - Effect: Allow
+              Action: [bedrock-mantle:*, bedrock:InvokeModel, bedrock:InvokeModelWithResponseStream]
+              Resource: "*"
+      Events:
+        Api:
+          Type: HttpApi
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com"
+  DataBucketName:
+    Value: !Ref DataBucket

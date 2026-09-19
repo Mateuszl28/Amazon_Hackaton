@@ -1,0 +1,3 @@
+anthropic>=0.116
+boto3
+google-genai  # only for LLM_PROVIDER=gemini

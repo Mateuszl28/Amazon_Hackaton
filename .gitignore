@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.aws-sam/
+media/
+.env.local
+eval/leak_report.*
+android-tv/.gradle/
+android-tv/build/
+android-tv/app/build/
+android-tv/local.properties
+android-tv/.idea/

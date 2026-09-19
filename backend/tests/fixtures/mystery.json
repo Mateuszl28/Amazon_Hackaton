@@ -1,0 +1,24 @@
+{
+  "title_id": "mystery",
+  "title": "Test Mystery",
+  "kind": "film",
+  "video_url": "",
+  "duration_s": 120,
+  "cues": [
+    {"start": 5, "end": 8, "text": "Who are you?"},
+    {"start": 45, "end": 48, "text": "Call me the Stranger."},
+    {"start": 95, "end": 99, "text": "I am your brother, Tom."}
+  ],
+  "segments": [
+    {"start": 0, "end": 30, "summary": "Anna waits at the station.", "characters": ["anna"], "events": []},
+    {"start": 30, "end": 60, "summary": "A hooded stranger sits next to Anna.", "characters": ["anna", "tom"], "events": []},
+    {"start": 60, "end": 90, "summary": "They board the same train.", "characters": ["anna", "tom"], "events": []},
+    {"start": 90, "end": 120, "summary": "The stranger reveals he is Anna's brother Tom.", "characters": ["anna", "tom"], "events": ["reveal"]}
+  ],
+  "characters": [
+    {"id": "anna", "names": [{"t": 0, "name": "Anna"}], "appearance": "red coat",
+     "facts": [{"t": 30, "text": "Waiting for someone at the station."}]},
+    {"id": "tom", "names": [{"t": 30, "name": "Hooded stranger"}, {"t": 120, "name": "Tom"}], "appearance": "grey hood",
+     "facts": [{"t": 60, "text": "Calls himself the Stranger."}, {"t": 120, "text": "Anna's brother."}]}
+  ]
+}
