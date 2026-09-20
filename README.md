@@ -135,7 +135,7 @@ Set these in the environment, or in a gitignored `.env.local` at the repo root
 | Env var | Default | |
 |---|---|---|
 | `LLM_PROVIDER` | `bedrock` | `anthropic`, `gemini` (AI Studio free tier), or `mock` |
-| `LLM_MODEL` | per provider | `anthropic.claude-opus-5` / `claude-opus-5` / `gemini-2.5-flash` |
+| `LLM_MODEL` | per provider | `anthropic.claude-opus-5` / `claude-opus-5` / `gemini-3.1-flash-lite` |
 | `AWS_REGION` | `us-east-1` | Bedrock region |
 | `ANTHROPIC_API_KEY` / `GEMINI_API_KEY` | – | for those providers |
 | `DATA_BUCKET` | – | S3 bucket; unset = read `data/titles/` |
