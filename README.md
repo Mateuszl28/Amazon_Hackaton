@@ -115,6 +115,10 @@ On the TV: open a title, press **☰ (Menu)** on the remote → *Who's that?* / 
 - **Sport mode** — a title ingested with `--kind sport --rules data/rules/american-football.txt`
   answers rule questions for a newcomer, and the score is fenced like everything else: at 2:00 of
   the demo game it says 13-0, not the 34-20 it ends on.
+- **Kid mode** — a toggle in the overlay that keeps the same fenced knowledge but answers in
+  short, gentle words a seven-year-old follows. *"Sintel tiptoes very carefully past the big
+  sleeping dragon"* instead of *"Sintel manoeuvres through the cavern, sneaking past the massive
+  sleeping dragon"*.
 - **Knowledge bar** — every answer shows the title's timeline: what you've watched, the moments the
   answer draws on, the recapped range, and everything after your position hatched out as
   *hidden from the AI*. Markers are clamped to your position server-side, so even a model citing

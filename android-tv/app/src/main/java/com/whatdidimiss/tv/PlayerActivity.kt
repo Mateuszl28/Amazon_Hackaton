@@ -44,6 +44,7 @@ class PlayerActivity : AppCompatActivity() {
         private const val SKIP_MIN_S = 30.0
         private const val SKIP_HINT_MS = 10_000L
         private const val SEEK_BURST_MS = 5_000L
+        private const val KID_MODE = "kid_mode"
     }
 
     private lateinit var player: ExoPlayer
@@ -59,9 +60,11 @@ class PlayerActivity : AppCompatActivity() {
     private lateinit var menuHint: TextView
     private lateinit var knowledgeBar: KnowledgeBarView
     private lateinit var jumpButton: Button
+    private lateinit var kidChip: Button
     private lateinit var titleId: String
     private var pending: Job? = null
     private var skippedFromS: Double? = null
+    private var kidMode = false
     private var seekOriginMs = 0L
     private var lastSeekAtMs = 0L
 
@@ -89,6 +92,14 @@ class PlayerActivity : AppCompatActivity() {
         menuHint = findViewById(R.id.menu_hint)
         knowledgeBar = findViewById(R.id.knowledge_bar)
         jumpButton = findViewById(R.id.jump_button)
+        kidChip = findViewById(R.id.chip_kid)
+        kidMode = prefs.getBoolean(KID_MODE, false)
+        applyKidMode()
+        kidChip.setOnClickListener {
+            kidMode = !kidMode
+            prefs.edit().putBoolean(KID_MODE, kidMode).apply()
+            applyKidMode()
+        }
 
         player = ExoPlayer.Builder(this).build().also { playerView.player = it }
         player.setMediaItem(MediaItem.fromUri(intent.getStringExtra(EXTRA_VIDEO_URL)!!))
@@ -160,6 +171,12 @@ class PlayerActivity : AppCompatActivity() {
         return super.dispatchKeyEvent(event)
     }
 
+    /** Simpler words for a child watching along; the fence itself is unchanged. */
+    private fun applyKidMode() {
+        kidChip.setText(if (kidMode) R.string.chip_kid_on else R.string.chip_kid_off)
+        menuHint.setText(if (kidMode) R.string.hint_menu_kid else R.string.hint_menu)
+    }
+
     /** Viewer jumped ahead: offer a recap of exactly the part they skipped. */
     private fun onSkippedAhead(fromS: Double, jumpS: Double) {
         skippedFromS = fromS
@@ -170,7 +187,7 @@ class PlayerActivity : AppCompatActivity() {
 
     private val resetHint = Runnable {
         skippedFromS = null
-        menuHint.setText(R.string.hint_menu)
+        applyKidMode()
     }
 
     private fun showChips() {
@@ -221,7 +238,8 @@ class PlayerActivity : AppCompatActivity() {
         pending = lifecycleScope.launch {
             try {
                 val frame = if (withFrame) captureFrame() else null
-                val res = CompanionApi.ask(titleId, pos, mode, question, frame, fromS)
+                val res = CompanionApi.ask(titleId, pos, mode, question, frame, fromS,
+                    if (kidMode) "kid" else "adult")
                 headline.text = headlineOverride ?: res.headline
                 answer.text = res.text
                 res.character?.let {

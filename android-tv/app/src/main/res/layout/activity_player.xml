@@ -115,6 +115,7 @@
         <Button android:id="@+id/chip_explain" style="@style/Chip" android:text="@string/chip_explain" />
         <Button android:id="@+id/chip_back" style="@style/Chip" android:text="@string/chip_back" />
         <Button android:id="@+id/chip_ask" style="@style/Chip" android:text="@string/chip_ask" />
+        <Button android:id="@+id/chip_kid" style="@style/Chip" android:text="@string/chip_kid_off" />
 
         <EditText
             android:id="@+id/ask_input"

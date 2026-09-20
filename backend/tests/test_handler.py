@@ -98,6 +98,19 @@ class AskRouteTest(unittest.TestCase):
         _, out = self.ask(position_s=70, mode="recap", from_s=500)
         self.assertEqual(out["range"], {"from": 70.0, "to": 70.0})
 
+    def test_kid_mode_changes_the_briefing_not_the_fence(self):
+        _, adult = self.ask(position_s=70, mode="who")
+        adult_prompt = self.prompts[-1]
+        _, kid = self.ask(position_s=70, mode="who", audience="kid")
+        self.assertEqual(kid["audience"], "kid")
+        self.assertEqual(adult["audience"], "adult")
+        # the viewer's knowledge is identical; only the system briefing differs
+        self.assertEqual(adult_prompt, self.prompts[-1])
+
+    def test_unknown_audience_falls_back_to_adult(self):
+        _, out = self.ask(position_s=70, mode="who", audience="pirate")
+        self.assertEqual(out["audience"], "adult")
+
     def test_bad_requests(self):
         self.assertEqual(self.ask(mode="who")[0], 400)
         self.assertEqual(self.ask(position_s=1, mode="dance")[0], 400)

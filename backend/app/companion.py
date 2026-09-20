@@ -49,6 +49,8 @@ ANSWER_SCHEMA = {
     "additionalProperties": False,
 }
 
+KID_SYSTEM = """This viewer is a child watching with their family. Use short, plain words a seven-year-old knows, at most two sentences. Keep it gentle: describe frightening, violent or sad moments softly and never add detail the picture did not already show. Stay warm and curious, and never talk down to them."""
+
 MODE_PROMPTS = {
     "who": "Who is the person/character in focus on screen right now? If several, the most prominent one.",
     "explain": "Explain what just happened on screen and why it matters.",
@@ -57,8 +59,10 @@ MODE_PROMPTS = {
 
 
 def answer(timeline: dict, position_s: float, mode: str, question: str = "",
-           frame_jpeg_b64: str | None = None, from_s: float | None = None) -> dict:
+           frame_jpeg_b64: str | None = None, from_s: float | None = None,
+           audience: str = "adult") -> dict:
     view = build_view(timeline, position_s)
+    system = SYSTEM if audience != "kid" else f"{SYSTEM}\n\n{KID_SYSTEM}"
     content: list[dict] = [{"type": "text", "text": view.to_prompt()}]
 
     start = None
@@ -82,7 +86,7 @@ def answer(timeline: dict, position_s: float, mode: str, question: str = "",
         if llm.PROVIDER == "mock":
             data = _mock_answer(view, mode, question, start)
         else:
-            data = json.loads(llm.complete(SYSTEM, content, schema=ANSWER_SCHEMA))
+            data = json.loads(llm.complete(system, content, schema=ANSWER_SCHEMA))
     except llm.Refused:
         data = {"headline": "Hmm", "answer": "I can't help with that one.", "character_id": "",
                 "moments": [], "seek_to": -1}
@@ -97,6 +101,7 @@ def answer(timeline: dict, position_s: float, mode: str, question: str = "",
     data["markers"] = _markers(view, ch, data.pop("moments", []))
     data["seek_to"] = _seek_target(view, data.pop("seek_to", -1))
     data["range"] = {"from": start, "to": view.position_s} if start is not None else None
+    data["audience"] = audience
     return data
 
 

@@ -5,12 +5,15 @@
     <string name="loading_titles">Loading titles…</string>
     <string name="titles_error">Can\'t reach the companion backend at %1$s</string>
     <string name="hint_menu">☰  Companion</string>
+    <string name="hint_menu_kid">☰  Companion · 🧒</string>
     <string name="chip_who">Who\'s that?</string>
     <string name="chip_recap">What did I miss?</string>
     <string name="chip_explain">Explain that</string>
     <string name="chip_back">Take me back…</string>
     <string name="jump_to">▶  Jump to %1$s</string>
     <string name="ask_back_prefill">Take me back to when </string>
+    <string name="chip_kid_off">Kid mode: off</string>
+    <string name="chip_kid_on">🧒 Kid mode: on</string>
     <string name="chip_ask">Ask…</string>
     <string name="ask_hint">Type a question and press Enter</string>
     <string name="thinking">Thinking — only using what you\'ve already seen…</string>

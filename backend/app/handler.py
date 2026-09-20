@@ -41,9 +41,10 @@ def route(method: str, path: str, body: dict) -> tuple[int, dict]:
         except KeyError:
             return 404, {"error": f"unknown title {title_id}"}
         t0 = time.perf_counter()
+        audience = "kid" if body.get("audience") == "kid" else "adult"
         out = answer(tl, pos, mode, body.get("question", ""), body.get("frame_jpeg_b64"),
-                     body.get("from_s"))
-        log.info(json.dumps({"mode": mode, "pos": pos, "ms": int((time.perf_counter() - t0) * 1000)}))
+                     body.get("from_s"), audience)
+        log.info(json.dumps({"mode": mode, "pos": pos, "audience": audience, "ms": int((time.perf_counter() - t0) * 1000)}))
         return 200, out
     if method == "GET" and path == "/health":
         return 200, {"ok": True}

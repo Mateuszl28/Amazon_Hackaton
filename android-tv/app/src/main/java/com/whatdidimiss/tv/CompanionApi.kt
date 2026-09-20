@@ -55,11 +55,13 @@ object CompanionApi {
         question: String? = null,
         frameJpegB64: String? = null,
         fromS: Double? = null,
+        audience: String = "adult",
     ): Answer = withContext(Dispatchers.IO) {
         val payload = JSONObject()
             .put("title_id", titleId)
             .put("position_s", positionS)
             .put("mode", mode)
+            .put("audience", audience)
         question?.let { payload.put("question", it) }
         frameJpegB64?.let { payload.put("frame_jpeg_b64", it) }
         fromS?.let { payload.put("from_s", it) }
