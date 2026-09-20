@@ -37,11 +37,17 @@ model judge every answer against the part of the film the viewer has *not* reach
 
 | arm | leaks | questions | leak rate |
 |---|---|---|---|
-| **fenced (ours)** | **0** | 18 | **0%** |
-| baseline | 6 | 18 | 33% |
+| **fenced (ours)** | **0** | 30 | **0%** |
+| baseline | 9 | 30 | 30% |
 
-*Sintel*, 3 positions × 6 questions (two neutral, four fishing for the ending), judge and both
+*Sintel*, 5 positions × 6 questions (two neutral, four fishing for the ending), judge and both
 arms on `gemini-3.1-flash-lite`, 2026-09-20. Full report: `eval/leak_report.md`.
+
+Getting there took three fixes that the measurement itself surfaced: the model read the lead's
+name off the title, so the backend now redacts names the viewer has not heard (`_redact_future_names`);
+it filled gaps from its own memory of a famous film, so the prompt tells it to ignore what it
+recognises and stay traceable to the log; and the judge counted the scene playing on screen as
+"unseen", which was a flaw in the test, not the product.
 
 The same question, the same film, two positions — the fence is the only difference:
 

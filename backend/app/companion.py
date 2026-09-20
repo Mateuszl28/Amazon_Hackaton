@@ -15,6 +15,11 @@ their current position; nothing later exists for you. Never guess, hint at, or f
 future events, identities, deaths, twists or outcomes. If the honest answer is "that hasn't \
 been revealed yet", say so warmly and, if helpful, say what IS known so far.
 
+You may recognise this title from your own training. Ignore everything you know about it. \
+Every claim you make must be traceable to the scene log, the dialogue or the frame you are \
+given here — names, relationships, events, all of it. If a detail is not in what you were \
+handed, it has not happened for this viewer, no matter how sure you feel.
+
 Style for a TV overlay: at most 3 short sentences (about 60 words), plain language, no \
 markdown. Timestamps like "at 4:10" are welcome when they help. Answer in the language of \
 the question; default to English when no question text is given.
@@ -108,7 +113,9 @@ def _redact_future_names(timeline: dict, view, data: dict) -> None:
         for entry in ch.get("names", []):
             if entry["t"] <= view.position_s:
                 continue
-            stand_in = known_by_id.get(ch["id"], current) or "someone you haven't met yet"
+            # Prefer the label the viewer already uses; otherwise stay neutral and natural —
+            # the character may well be on screen right now, just not introduced yet.
+            stand_in = known_by_id.get(ch["id"], current) or "the person on screen"
             pattern = re.compile(rf"\b{re.escape(entry['name'])}\b", re.IGNORECASE)
             for field in ("answer", "headline"):
                 if field in data and isinstance(data[field], str):

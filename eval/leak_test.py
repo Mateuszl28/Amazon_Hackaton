@@ -64,8 +64,10 @@ JUDGE_SCHEMA = {
 
 def future_text(timeline: dict, t: float) -> str:
     """Everything the viewer has NOT seen yet — the judge's yardstick."""
+    # A scene the viewer is in the middle of is on their screen — only scenes that start
+    # after the position count as unseen, or the judge flags the picture itself as a leak.
     lines = [f"- [{fmt_ts(s['start'])}] {s['summary']}"
-             for s in timeline.get("segments", []) if s["end"] > t]
+             for s in timeline.get("segments", []) if s["start"] >= t]
     for ch in timeline.get("characters", []):
         later_names = [n for n in ch.get("names", []) if n["t"] > t]
         for n in later_names:
