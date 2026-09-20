@@ -22,6 +22,8 @@ data class Answer(
     val durationS: Double,
     val markers: List<KnowledgeBarView.Marker>,
     val range: ClosedFloatingPointRange<Double>?,
+    /** A moment the viewer asked to go back to; always inside what they have already watched. */
+    val seekToS: Double?,
 )
 
 object CompanionApi {
@@ -79,6 +81,7 @@ object CompanionApi {
                 }
             }.orEmpty(),
             range = body.optJSONObject("range")?.let { it.getDouble("from")..it.getDouble("to") },
+            seekToS = if (body.isNull("seek_to")) null else body.optDouble("seek_to"),
         )
     }
 

@@ -21,11 +21,13 @@ class AskRouteTest(unittest.TestCase):
         self.model_moments = []
         self.model_text = "y"
         self.model_headline = "x"
+        self.model_seek = -1
 
         def fake_complete(system, content, **kw):
             self.prompts.append("\n".join(b.get("text", "") for b in content))
             return json.dumps({"headline": self.model_headline, "answer": self.model_text,
-                               "character_id": "c2", "moments": self.model_moments})
+                               "character_id": "c2", "moments": self.model_moments,
+                               "seek_to": self.model_seek})
 
         patches = [
             mock.patch.object(store, "timeline", lambda _id: TIMELINE),
@@ -63,6 +65,20 @@ class AskRouteTest(unittest.TestCase):
         self.model_text = "That is Tom, Anna's brother."
         _, out = self.ask(position_s=120, mode="who")
         self.assertIn("Tom", out["answer"])
+
+    def test_jump_target_inside_what_was_seen_is_kept(self):
+        self.model_seek = 35
+        _, out = self.ask(position_s=70, mode="ask", question="take me back to when they met")
+        self.assertEqual(out["seek_to"], 35.0)
+
+    def test_jump_into_the_future_is_dropped(self):
+        self.model_seek = 110  # a scene the viewer has not reached
+        _, out = self.ask(position_s=70, mode="ask", question="take me to the reveal")
+        self.assertIsNone(out["seek_to"])
+
+    def test_no_jump_requested(self):
+        _, out = self.ask(position_s=70, mode="who")
+        self.assertIsNone(out["seek_to"])
 
     def test_markers_never_pass_the_fence(self):
         # a model citing the future (100 s, 119 s) must not leak it onto the timeline

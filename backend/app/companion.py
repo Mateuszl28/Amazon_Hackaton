@@ -20,7 +20,12 @@ markdown. Timestamps like "at 4:10" are welcome when they help. Answer in the la
 the question; default to English when no question text is given.
 
 For sport: explain calls and rules for a newcomer, using the rules reference and what \
-happened on screen; never mention the final score or later plays."""
+happened on screen; never mention the final score or later plays.
+
+If the viewer asks to go back to something ("take me back to when they met", "replay the fight"), \
+put that scene's timestamp in seek_to and keep the answer to one line naming what happens there. \
+Only scenes they have already watched can be jumped to; when you cannot find it in what they have \
+seen, say so and leave seek_to at -1."""
 
 ANSWER_SCHEMA = {
     "type": "object",
@@ -30,8 +35,12 @@ ANSWER_SCHEMA = {
         "character_id": {"type": "string", "description": "[cN] handle of the character the answer is about, or empty"},
         "moments": {"type": "array", "items": {"type": "number"},
                     "description": "up to 5 timestamps in seconds, from the story so far, that the answer relies on"},
+        "seek_to": {"type": "number",
+                    "description": "when the viewer asks to go back to a moment, the timestamp in "
+                                   "seconds to jump to (inside what they have already seen); "
+                                   "-1 when they are not asking to jump"},
     },
-    "required": ["headline", "answer", "character_id", "moments"],
+    "required": ["headline", "answer", "character_id", "moments", "seek_to"],
     "additionalProperties": False,
 }
 
@@ -70,7 +79,8 @@ def answer(timeline: dict, position_s: float, mode: str, question: str = "",
         else:
             data = json.loads(llm.complete(SYSTEM, content, schema=ANSWER_SCHEMA))
     except llm.Refused:
-        data = {"headline": "Hmm", "answer": "I can't help with that one.", "character_id": "", "moments": []}
+        data = {"headline": "Hmm", "answer": "I can't help with that one.", "character_id": "",
+                "moments": [], "seek_to": -1}
 
     _redact_future_names(timeline, view, data)
 
@@ -80,6 +90,7 @@ def answer(timeline: dict, position_s: float, mode: str, question: str = "",
     data["position_s"] = view.position_s
     data["duration_s"] = view.duration_s
     data["markers"] = _markers(view, ch, data.pop("moments", []))
+    data["seek_to"] = _seek_target(view, data.pop("seek_to", -1))
     data["range"] = {"from": start, "to": view.position_s} if start is not None else None
     return data
 
@@ -104,6 +115,13 @@ def _redact_future_names(timeline: dict, view, data: dict) -> None:
                     data[field] = pattern.sub(stand_in, data[field])
 
 
+def _seek_target(view, seek_to) -> float | None:
+    """Jumping is fenced too: the viewer can only be sent back into what they have seen."""
+    if isinstance(seek_to, bool) or not isinstance(seek_to, (int, float)):
+        return None
+    return float(seek_to) if 0 <= seek_to <= view.position_s else None
+
+
 def _markers(view, character, moments: list) -> list[dict]:
     """Timeline dots for the overlay. The fence applies here too: nothing after the position."""
     pos = view.position_s
@@ -125,6 +143,7 @@ def _mock_answer(view, mode: str, question: str, start: float | None) -> dict:
         "answer": (f"{scope}{question + ' — ' if question else ''}I can see {len(view.segments)} finished "
                    f"scenes, {len(view.characters)} characters and the last line \"{last}\"."),
         "character_id": view.characters[-1].ref if view.characters else "",
+        "seek_to": view.segments[-1]["start"] if view.segments else -1,
         # dialogue lines the viewer has heard stand in for the model's cited moments
         "moments": [c["start"] for c in view.live_dialogue][-5:],
     }

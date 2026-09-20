@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -55,6 +56,7 @@ class PlayerActivity : AppCompatActivity() {
     private lateinit var firstSeen: TextView
     private lateinit var menuHint: TextView
     private lateinit var knowledgeBar: KnowledgeBarView
+    private lateinit var jumpButton: Button
     private lateinit var titleId: String
     private var pending: Job? = null
     private var skippedFromS: Double? = null
@@ -84,6 +86,7 @@ class PlayerActivity : AppCompatActivity() {
         firstSeen = findViewById(R.id.first_seen)
         menuHint = findViewById(R.id.menu_hint)
         knowledgeBar = findViewById(R.id.knowledge_bar)
+        jumpButton = findViewById(R.id.jump_button)
 
         player = ExoPlayer.Builder(this).build().also { playerView.player = it }
         player.setMediaItem(MediaItem.fromUri(intent.getStringExtra(EXTRA_VIDEO_URL)!!))
@@ -121,6 +124,9 @@ class PlayerActivity : AppCompatActivity() {
             ask("recap", fromS = from)
         }
         findViewById<View>(R.id.chip_explain).setOnClickListener { ask("explain", withFrame = true) }
+        findViewById<View>(R.id.chip_back).setOnClickListener {
+            showTypedAsk(getString(R.string.ask_back_prefill))
+        }
         findViewById<View>(R.id.chip_ask).setOnClickListener { startVoiceAsk() }
         askInput.setOnEditorActionListener { _, actionId, event ->
             val enter = actionId == EditorInfo.IME_ACTION_SEND ||
@@ -206,6 +212,7 @@ class PlayerActivity : AppCompatActivity() {
         answer.text = getString(R.string.thinking)
         firstSeen.visibility = View.GONE
         knowledgeBar.visibility = View.GONE
+        jumpButton.visibility = View.GONE
         progress.visibility = View.VISIBLE
 
         pending?.cancel()
@@ -220,6 +227,15 @@ class PlayerActivity : AppCompatActivity() {
                     firstSeen.visibility = View.VISIBLE
                 }
                 knowledgeBar.bind(res.durationS, res.positionS, res.markers, res.range)
+                res.seekToS?.let { target ->
+                    jumpButton.text = getString(R.string.jump_to, formatTs(target))
+                    jumpButton.visibility = View.VISIBLE
+                    jumpButton.setOnClickListener {
+                        player.seekTo((target * 1000).toLong())
+                        hideOverlay()
+                    }
+                    jumpButton.requestFocus()
+                }
                 // Same moments on the player's own seek bar once the overlay is closed.
                 playerView.setExtraAdGroupMarkers(
                     res.markers.map { (it.t * 1000).toLong() }.toLongArray(),
@@ -230,7 +246,8 @@ class PlayerActivity : AppCompatActivity() {
                 answer.text = getString(R.string.error_answer, e.message)
             } finally {
                 progress.visibility = View.GONE
-                if (chips.visibility == View.VISIBLE && focused != null && !focused.isFocused) focused.requestFocus()
+                if (chips.visibility == View.VISIBLE && jumpButton.visibility != View.VISIBLE &&
+                    focused != null && !focused.isFocused) focused.requestFocus()
             }
         }
     }
@@ -262,9 +279,11 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     /** Fallback when no speech recognizer is exposed to apps: the Fire TV keyboard (which has its own mic). */
-    private fun showTypedAsk() {
+    private fun showTypedAsk(prefill: String = "") {
         player.pause()
         askInput.visibility = View.VISIBLE
+        askInput.setText(prefill)
+        askInput.setSelection(prefill.length)
         askInput.requestFocus()
         getSystemService(InputMethodManager::class.java)?.showSoftInput(askInput, InputMethodManager.SHOW_IMPLICIT)
     }

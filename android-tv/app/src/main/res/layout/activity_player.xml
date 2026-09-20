@@ -79,6 +79,12 @@
             android:layout_marginTop="16dp"
             android:visibility="gone" />
 
+        <Button
+            android:id="@+id/jump_button"
+            style="@style/Chip"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
         <ProgressBar
             android:id="@+id/progress"
             style="?android:attr/progressBarStyleHorizontal"
@@ -89,19 +95,25 @@
             android:visibility="gone" />
     </LinearLayout>
 
-    <LinearLayout
+    <HorizontalScrollView
         android:id="@+id/chips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="40dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:scrollbars="none"
         android:visibility="gone">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <Button android:id="@+id/chip_who" style="@style/Chip" android:text="@string/chip_who" />
         <Button android:id="@+id/chip_recap" style="@style/Chip" android:text="@string/chip_recap" />
         <Button android:id="@+id/chip_explain" style="@style/Chip" android:text="@string/chip_explain" />
+        <Button android:id="@+id/chip_back" style="@style/Chip" android:text="@string/chip_back" />
         <Button android:id="@+id/chip_ask" style="@style/Chip" android:text="@string/chip_ask" />
 
         <EditText
@@ -116,5 +128,6 @@
             android:textColor="@color/text"
             android:textColorHint="@color/muted"
             android:visibility="gone" />
-    </LinearLayout>
+      </LinearLayout>
+    </HorizontalScrollView>
 </FrameLayout>
