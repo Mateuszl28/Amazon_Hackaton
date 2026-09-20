@@ -27,7 +27,9 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlin.coroutines.coroutineContext
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 
@@ -245,9 +247,13 @@ class PlayerActivity : AppCompatActivity() {
                 if (e is kotlinx.coroutines.CancellationException) throw e
                 answer.text = getString(R.string.error_answer, e.message)
             } finally {
-                progress.visibility = View.GONE
-                if (chips.visibility == View.VISIBLE && jumpButton.visibility != View.VISIBLE &&
-                    focused != null && !focused.isFocused) focused.requestFocus()
+                // A question the viewer replaced must not touch the overlay on its way out:
+                // restoring focus here would yank it off whatever they just moved to.
+                if (coroutineContext.isActive) {
+                    progress.visibility = View.GONE
+                    if (chips.visibility == View.VISIBLE && jumpButton.visibility != View.VISIBLE &&
+                        focused != null && !focused.isFocused) focused.requestFocus()
+                }
             }
         }
     }
