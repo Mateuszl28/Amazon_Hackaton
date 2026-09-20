@@ -1,0 +1,908 @@
+{
+ "title_id": "football",
+ "title": "Oregon vs Washington State",
+ "kind": "sport",
+ "video_url": "/media/football_540p.mp4",
+ "duration_s": 272.0,
+ "cues": [],
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 20.0,
+   "summary": "Washington State player #32 catches a pass and runs for a touchdown against Oregon early in the first quarter.",
+   "characters": [
+    "oregon_15",
+    "oregon_24",
+    "oregon_4",
+    "oregon_7",
+    "referee_1",
+    "washington_st_32"
+   ],
+   "events": [
+    "The ball is snapped to begin a play for Washington State.",
+    "Washington State player #32 catches a short pass and turns upfield.",
+    "Washington State player #32 runs past several Oregon defenders into the end zone.",
+    "The referee signals a touchdown for Washington State."
+   ]
+  },
+  {
+   "start": 20.0,
+   "end": 40.0,
+   "summary": "Washington State takes a 6-0 lead over Oregon early in the first quarter. Following the touchdown, Washington State kicks off to Oregon, who returns the ball to the 25-yard line.",
+   "characters": [
+    "oregon_15",
+    "oregon_16",
+    "oregon_24",
+    "oregon_35",
+    "oregon_39",
+    "oregon_4",
+    "oregon_7",
+    "referee_1",
+    "washington_st_32",
+    "wsu_coach_white_polo"
+   ],
+   "events": [
+    "Washington State players celebrate their touchdown in the end zone.",
+    "The Washington State head coach is shown watching from the sidelines.",
+    "Washington State kicks off to Oregon.",
+    "Oregon player #16 returns the kickoff to the 25-yard line before being tackled."
+   ]
+  },
+  {
+   "start": 40.0,
+   "end": 60.0,
+   "summary": "Replay footage of the game's opening touchdown shows Washington State's quarterback finding player #32 for a short pass, who then dodges several defenders to score. The point after is successful, making the score 7-0.",
+   "characters": [
+    "oregon_15",
+    "oregon_16",
+    "oregon_35",
+    "oregon_39",
+    "washington_st_16",
+    "washington_st_32"
+   ],
+   "events": [
+    "Washington State player #16 completes a short screen pass to player #32.",
+    "Washington State player #32 maneuvers past a diving tackle attempt by Oregon player #15.",
+    "Washington State player #32 breaks a tackle attempt from Oregon player #35.",
+    "Washington State player #32 stiff-arms Oregon player #39 and runs into the end zone.",
+    "A graphics overlay shows the score as 7-0 in favor of Washington State with 12:43 remaining in the first quarter."
+   ]
+  },
+  {
+   "start": 60.0,
+   "end": 80.0,
+   "summary": "At the start of the second quarter, Washington State leads 7-0. Quarterback Minshew II completes a pass to a teammate as they look to extend their lead.",
+   "characters": [
+    "oregon_37",
+    "oregon_90",
+    "washington_st_16",
+    "washington_st_32",
+    "washington_st_5",
+    "washington_st_88"
+   ],
+   "events": [
+    "The second quarter begins with Washington State holding a 7-0 lead over Oregon.",
+    "Washington State quarterback #16 completes a pass for a gain of over 10 yards."
+   ]
+  },
+  {
+   "start": 80.0,
+   "end": 100.0,
+   "summary": "Washington State quarterback Minshew II completes a long pass to player #21, who runs down the left sideline for a significant gain.",
+   "characters": [
+    "oregon_11",
+    "oregon_22",
+    "oregon_39",
+    "oregon_93",
+    "washington_st_16",
+    "washington_st_21",
+    "washington_st_23",
+    "washington_st_27",
+    "washington_st_30",
+    "washington_st_60",
+    "washington_st_65",
+    "washington_st_72"
+   ],
+   "events": [
+    "Washington State lines up for a 2nd and 9 play from their own side of the field.",
+    "Minshew II takes the snap and drops back to pass.",
+    "Minshew II throws a pass towards the left sideline.",
+    "Washington State player #21 catches the ball and sprints past the Oregon secondary."
+   ]
+  },
+  {
+   "start": 100.0,
+   "end": 120.0,
+   "summary": "Washington State player #21 scores a touchdown, which is upheld after a formal review, bringing the score to 13-0.",
+   "characters": [
+    "referee_1",
+    "washington_st_16",
+    "washington_st_17",
+    "washington_st_2",
+    "washington_st_21",
+    "washington_st_61",
+    "washington_st_8",
+    "wsu_coach_white_polo"
+   ],
+   "events": [
+    "Washington State player #21 crosses the goal line for a touchdown.",
+    "Referees conduct an official review of the play to check if the player's knee touched the ground before the goal line.",
+    "The head referee announces the ruling that the touchdown stands.",
+    "Washington State players celebrate on the sideline after the confirmation."
+   ]
+  },
+  {
+   "start": 120.0,
+   "end": 140.0,
+   "summary": "Washington State increases their lead to 19-0 after quarterback Minshew II throws a touchdown pass to Winston Jr. in the end zone.",
+   "characters": [
+    "oregon_11",
+    "oregon_15",
+    "oregon_28",
+    "oregon_8",
+    "referee_1",
+    "washington_st_16",
+    "washington_st_17",
+    "washington_st_5",
+    "washington_st_8",
+    "washington_st_81"
+   ],
+   "events": [
+    "Washington State lines up for a 3rd and goal play.",
+    "Minshew II passes the ball to Winston Jr., who catches it for a touchdown.",
+    "Winston Jr. and Martin Jr. celebrate the scoring play in the end zone."
+   ]
+  },
+  {
+   "start": 140.0,
+   "end": 160.0,
+   "summary": "Washington State increases their dominant lead over Oregon as Minshew II throws his second touchdown pass of the game to Tay Martin.",
+   "characters": [
+    "oregon_35",
+    "referee_1",
+    "washington_st_16",
+    "washington_st_21"
+   ],
+   "events": [
+    "Washington State converts an extra point to bring the score to 20-0.",
+    "Minshew II completes a touchdown pass to Tay Martin.",
+    "The score updates to 26-0 in favor of Washington State late in the second quarter."
+   ]
+  },
+  {
+   "start": 160.0,
+   "end": 180.0,
+   "summary": "Oregon scores their first points of the game in the third quarter with a touchdown pass from Justin Herbert to Jaylon Redd.",
+   "characters": [
+    "oregon_10",
+    "oregon_30",
+    "oregon_68",
+    "oregon_87",
+    "washington_st_16",
+    "washington_st_25",
+    "washington_st_34",
+    "washington_st_41"
+   ],
+   "events": [
+    "Oregon lines up for a 4th and 1 play at the Washington State goal line.",
+    "Quarterback Justin Herbert throws a short pass to Jaylon Redd in the end zone for a touchdown.",
+    "The Oregon offense celebrates their first touchdown of the game."
+   ]
+  },
+  {
+   "start": 180.0,
+   "end": 200.0,
+   "summary": "Oregon cuts into Washington State's lead with a touchdown pass from Justin Herbert to Jaylon Redd.",
+   "characters": [
+    "oregon_10",
+    "oregon_30",
+    "oregon_37",
+    "oregon_9",
+    "washington_st_25",
+    "washington_st_34"
+   ],
+   "events": [
+    "Justin Herbert completes a long pass to Jaylon Redd.",
+    "Jaylon Redd runs into the end zone for a touchdown.",
+    "Oregon players celebrate the score."
+   ]
+  },
+  {
+   "start": 200.0,
+   "end": 220.0,
+   "summary": "Washington State extends their lead in the fourth quarter with a touchdown pass from Minshew II to James Williams.",
+   "characters": [
+    "oregon_7",
+    "referee_1",
+    "washington_st_12",
+    "washington_st_16",
+    "washington_st_17",
+    "washington_st_32",
+    "washington_st_81"
+   ],
+   "events": [
+    "Minshew II throws a short pass to Williams.",
+    "Williams runs the ball into the end zone for a touchdown.",
+    "The Washington State team celebrates the touchdown in the end zone.",
+    "The scoreboard updates to show Washington State leading Oregon 33-20."
+   ]
+  },
+  {
+   "start": 220.0,
+   "end": 240.0,
+   "summary": "Washington State seals a 34-20 victory over Oregon, as players and coaches celebrate their fourth consecutive win against the Ducks.",
+   "characters": [
+    "oregon_15",
+    "oregon_22",
+    "oregon_4",
+    "oregon_7",
+    "referee_1",
+    "washington_st_16",
+    "washington_st_32",
+    "washington_st_70",
+    "washington_st_72",
+    "wsu_coach_white_polo"
+   ],
+   "events": [
+    "Washington State players celebrate on the field after a scoring play.",
+    "The game clock winds down to zero, confirming a 34-20 win for Washington State.",
+    "Minshew II and teammates embrace to celebrate the victory."
+   ]
+  },
+  {
+   "start": 240.0,
+   "end": 260.0,
+   "summary": "Washington State fans storm the field at Martin Stadium to celebrate their victory over Oregon. Gardner Minshew II is seen with blood on his face during the post-game celebration, while Justin Herbert walks across the field.",
+   "characters": [
+    "oregon_10",
+    "washington_st_16",
+    "washington_st_5"
+   ],
+   "events": [
+    "Fans jump over the railings and storm the field to celebrate.",
+    "Gardner Minshew II celebrates with T. Harris and other teammates on the field.",
+    "Justin Herbert walks through the crowd on the field with a towel around his neck."
+   ]
+  },
+  {
+   "start": 260.0,
+   "end": 272.0,
+   "summary": "Fireworks celebrate the victory at Martin Stadium at night, followed by a Fox Sports end screen.",
+   "characters": [],
+   "events": [
+    "Red fireworks erupt from a building at Martin Stadium.",
+    "The video transitions to a Fox Sports logo animation."
+   ]
+  }
+ ],
+ "characters": [
+  {
+   "id": "washington_st_32",
+   "names": [
+    {
+     "t": 0.0,
+     "name": "Washington State player #32"
+    },
+    {
+     "t": 80.0,
+     "name": "Williams"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 32, dark helmet, and grey pants.",
+   "facts": [
+    {
+     "t": 20.0,
+     "text": "He plays for Washington State and wears number 32."
+    },
+    {
+     "t": 60.0,
+     "text": "He caught a screen pass for his touchdown run."
+    },
+    {
+     "t": 80.0,
+     "text": "His jersey identifies him as Williams."
+    },
+    {
+     "t": 220.0,
+     "text": "Scored a touchdown for Washington State in the fourth quarter."
+    }
+   ]
+  },
+  {
+   "id": "oregon_4",
+   "names": [
+    {
+     "t": 0.0,
+     "name": "Oregon player #4"
+    }
+   ],
+   "appearance": "White football jersey with number 4, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 20.0,
+     "text": "He plays for Oregon and wears number 4."
+    }
+   ]
+  },
+  {
+   "id": "oregon_7",
+   "names": [
+    {
+     "t": 0.0,
+     "name": "Oregon player #7"
+    }
+   ],
+   "appearance": "White football jersey with number 7, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 20.0,
+     "text": "He plays for Oregon and wears number 7."
+    }
+   ]
+  },
+  {
+   "id": "oregon_15",
+   "names": [
+    {
+     "t": 0.0,
+     "name": "Oregon player #15"
+    },
+    {
+     "t": 60.0,
+     "name": "Pickett"
+    }
+   ],
+   "appearance": "White football jersey with number 15, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 20.0,
+     "text": "He plays for Oregon and wears number 15."
+    }
+   ]
+  },
+  {
+   "id": "oregon_24",
+   "names": [
+    {
+     "t": 0.0,
+     "name": "Oregon player #24"
+    }
+   ],
+   "appearance": "White football jersey with number 24, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 20.0,
+     "text": "He plays for Oregon and wears number 24."
+    }
+   ]
+  },
+  {
+   "id": "referee_1",
+   "names": [
+    {
+     "t": 0.0,
+     "name": "Referee"
+    }
+   ],
+   "appearance": "Official wearing a black and white striped long-sleeve shirt and black pants.",
+   "facts": []
+  },
+  {
+   "id": "wsu_coach_white_polo",
+   "names": [
+    {
+     "t": 20.0,
+     "name": "Washington State coach"
+    }
+   ],
+   "appearance": "Middle-aged man with short salt-and-pepper hair, wearing a white Washington State polo shirt and a headset.",
+   "facts": [
+    {
+     "t": 40.0,
+     "text": "He is the head coach for the Washington State football team."
+    },
+    {
+     "t": 240.0,
+     "text": "Secured his fourth consecutive win against Oregon."
+    }
+   ]
+  },
+  {
+   "id": "oregon_16",
+   "names": [
+    {
+     "t": 20.0,
+     "name": "Oregon player #16"
+    }
+   ],
+   "appearance": "White football jersey with number 16, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_35",
+   "names": [
+    {
+     "t": 20.0,
+     "name": "Oregon player #35"
+    }
+   ],
+   "appearance": "White football jersey with number 35, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_39",
+   "names": [
+    {
+     "t": 20.0,
+     "name": "Oregon player #39"
+    }
+   ],
+   "appearance": "White football jersey with number 39, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_16",
+   "names": [
+    {
+     "t": 40.0,
+     "name": "Washington State player #16"
+    },
+    {
+     "t": 60.0,
+     "name": "Minshew II"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 16, dark helmet, and grey pants.",
+   "facts": [
+    {
+     "t": 60.0,
+     "text": "He is the Washington State quarterback."
+    },
+    {
+     "t": 160.0,
+     "text": "Has thrown three touchdown passes in the game so far."
+    },
+    {
+     "t": 240.0,
+     "text": "Won the game against Oregon."
+    },
+    {
+     "t": 260.0,
+     "text": "He has blood on his face while celebrating the victory on the field."
+    }
+   ]
+  },
+  {
+   "id": "washington_st_5",
+   "names": [
+    {
+     "t": 60.0,
+     "name": "Harris"
+    },
+    {
+     "t": 80.0,
+     "name": "T. Harris"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 5, dark helmet, and grey pants.",
+   "facts": [
+    {
+     "t": 80.0,
+     "text": "His jersey identifies him as T. Harris."
+    }
+   ]
+  },
+  {
+   "id": "washington_st_88",
+   "names": [
+    {
+     "t": 60.0,
+     "name": "Washington State player #88"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 88, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_90",
+   "names": [
+    {
+     "t": 60.0,
+     "name": "Oregon player #90"
+    }
+   ],
+   "appearance": "White football jersey with number 90, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_37",
+   "names": [
+    {
+     "t": 60.0,
+     "name": "Oregon player #37"
+    }
+   ],
+   "appearance": "White football jersey with number 37, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_93",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Oregon player #93"
+    }
+   ],
+   "appearance": "White football jersey with number 93, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_30",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #30"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 30, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_72",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #72"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 72, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_65",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #65"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 65, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_23",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #23"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 23, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_60",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #60"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 60, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_27",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #27"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 27, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_21",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Washington State player #21"
+    },
+    {
+     "t": 120.0,
+     "name": "Tay Martin"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 21, dark helmet, and grey pants.",
+   "facts": [
+    {
+     "t": 100.0,
+     "text": "He catches a long pass from Minshew II and gains significant yardage."
+    },
+    {
+     "t": 120.0,
+     "text": "Scored a touchdown that increased Washington State's lead to 13-0."
+    },
+    {
+     "t": 120.0,
+     "text": "The official review determined his knee did not touch the ground before the ball crossed the goal line."
+    },
+    {
+     "t": 160.0,
+     "text": "Has scored two touchdowns in the game so far."
+    }
+   ]
+  },
+  {
+   "id": "oregon_11",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Oregon player #11"
+    }
+   ],
+   "appearance": "White football jersey with number 11, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_22",
+   "names": [
+    {
+     "t": 80.0,
+     "name": "Oregon player #22"
+    }
+   ],
+   "appearance": "White football jersey with number 22, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_2",
+   "names": [
+    {
+     "t": 100.0,
+     "name": "Cooper"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 2, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_61",
+   "names": [
+    {
+     "t": 100.0,
+     "name": "Mayginnes"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 61, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_8",
+   "names": [
+    {
+     "t": 100.0,
+     "name": "Borghi"
+    },
+    {
+     "t": 140.0,
+     "name": "Winston Jr."
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 8, dark helmet, and grey pants.",
+   "facts": [
+    {
+     "t": 140.0,
+     "text": "The name Winston Jr. is visible on the back of his jersey."
+    },
+    {
+     "t": 140.0,
+     "text": "He caught a touchdown pass."
+    }
+   ]
+  },
+  {
+   "id": "washington_st_17",
+   "names": [
+    {
+     "t": 100.0,
+     "name": "Martin Jr."
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 17, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_81",
+   "names": [
+    {
+     "t": 120.0,
+     "name": "Washington State player #81"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 81, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_8",
+   "names": [
+    {
+     "t": 120.0,
+     "name": "Holland"
+    }
+   ],
+   "appearance": "White football jersey with number 8, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 140.0,
+     "text": "The name Holland is visible on the back of his jersey."
+    }
+   ]
+  },
+  {
+   "id": "oregon_28",
+   "names": [
+    {
+     "t": 120.0,
+     "name": "Oregon player #28"
+    }
+   ],
+   "appearance": "White football jersey with number 28, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_10",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Herbert"
+    }
+   ],
+   "appearance": "White football jersey with number 10, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 180.0,
+     "text": "Threw a touchdown pass to Redd in the third quarter."
+    },
+    {
+     "t": 200.0,
+     "text": "Herbert threw his second touchdown pass of the game."
+    },
+    {
+     "t": 260.0,
+     "text": "He has a white towel draped around his neck as he walks off the field."
+    }
+   ]
+  },
+  {
+   "id": "oregon_30",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Redd"
+    }
+   ],
+   "appearance": "White football jersey with number 30, white helmet, and white pants.",
+   "facts": [
+    {
+     "t": 180.0,
+     "text": "Caught a touchdown pass in the third quarter to give Oregon their first points."
+    },
+    {
+     "t": 200.0,
+     "text": "Redd scored his second touchdown of the game."
+    }
+   ]
+  },
+  {
+   "id": "oregon_68",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Lemieux"
+    }
+   ],
+   "appearance": "White football jersey with number 68, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_87",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Oregon player #87"
+    }
+   ],
+   "appearance": "White football jersey with number 87, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_25",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Thomas"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 25, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_41",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Sherman"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 41, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_34",
+   "names": [
+    {
+     "t": 160.0,
+     "name": "Thompson"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 34, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "oregon_9",
+   "names": [
+    {
+     "t": 180.0,
+     "name": "Spadler"
+    }
+   ],
+   "appearance": "White football jersey with number 9, white helmet, and white pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_12",
+   "names": [
+    {
+     "t": 200.0,
+     "name": "Washington State player #12"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 12, dark helmet, and grey pants.",
+   "facts": []
+  },
+  {
+   "id": "washington_st_70",
+   "names": [
+    {
+     "t": 220.0,
+     "name": "Haangana"
+    }
+   ],
+   "appearance": "Dark grey football jersey with number 70, dark helmet, and grey pants.",
+   "facts": []
+  }
+ ],
+ "rules": [
+  "The offence has four attempts, called downs, to move the ball 10 yards; reaching them resets the count to first down.",
+  "On fourth down a team usually punts the ball away or tries a field goal rather than risk handing possession over where they stand.",
+  "A touchdown is worth 6 points, the extra-point kick after it 1, a two-point conversion 2, a field goal 3, a safety 2 for the defence.",
+  "The play ends when the ball carrier is tackled to the ground, steps out of bounds, or the pass falls incomplete.",
+  "An incomplete pass stops the clock; a run or a completed pass inside the field keeps it running.",
+  "False start: an offensive player moves before the snap. Five yards, and the play is blown dead before it begins.",
+  "Offside / encroachment: a defender is in or across the neutral zone at the snap. Five yards.",
+  "Holding by the offence: grabbing or hooking a defender who is not carrying the ball. Ten yards, and it often wipes out a big gain.",
+  "Defensive holding or illegal contact: restraining a receiver early in the route. Five yards and usually an automatic first down.",
+  "Pass interference: significant contact that stops a receiver playing a catchable ball. The offence gets the ball where the foul happened; on the defence it is an automatic first down.",
+  "Roughing the passer: hitting the quarterback late, in the head, or driving him into the ground. Fifteen yards and an automatic first down.",
+  "Targeting: a hit with the crown of the helmet or to a defenceless player's head. Fifteen yards, and in college the player is ejected.",
+  "Unsportsmanlike conduct or taunting: fifteen yards, enforced from where the previous play ended.",
+  "Delay of game: the play clock runs out before the snap. Five yards.",
+  "Intentional grounding: the quarterback throws the ball away from any receiver while under pressure inside the pocket. Loss of down and yardage.",
+  "A turnover means the other team takes possession: an interception is a pass caught by the defence, a fumble is a loose ball recovered by either side.",
+  "A yellow flag on the field means an official saw a foul; the referee then announces it and the penalty yardage is walked off.",
+  "Coaches may challenge some calls, and scoring plays and turnovers are reviewed automatically by a booth official.",
+  "College football differs from the NFL: one foot in bounds completes a catch, the clock stops briefly after a first down, and overtime is played from the opponent's 25-yard line."
+ ]
+}

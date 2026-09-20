@@ -91,17 +91,23 @@ def _gemini(system: str, content: list[dict], max_tokens: int, schema: dict | No
         else types.Part.from_bytes(data=base64.b64decode(b["source"]["data"]), mime_type="image/jpeg")
         for b in content
     ]
+    # Gemini 3 spends part of max_output_tokens on internal reasoning, which truncated
+    # JSON answers mid-string; keep reasoning minimal and leave room for the reply.
     config = types.GenerateContentConfig(
         system_instruction=system,
-        max_output_tokens=max_tokens,
+        max_output_tokens=max(max_tokens, 2048),
+        thinking_config=types.ThinkingConfig(thinking_level="low"),
         response_mime_type="application/json" if schema else "text/plain",
         response_json_schema=_gemini_schema(schema),
     )
     resp = _with_backoff(lambda: client().models.generate_content(
         model=MODEL, contents=parts, config=config))
     text = (resp.text or "").strip()
+    finish = getattr((resp.candidates or [None])[0], "finish_reason", None)
+    if str(finish).endswith("MAX_TOKENS"):
+        raise Refused(f"answer truncated at {max_tokens} tokens")
     if not text:
-        raise Refused(str(getattr(resp, "prompt_feedback", "") or "empty response"))
+        raise Refused(str(getattr(resp, "prompt_feedback", "") or f"empty response ({finish})"))
     return text
 
 

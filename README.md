@@ -112,6 +112,9 @@ On the TV: open a title, press **☰ (Menu)** on the remote → *Who's that?* / 
   recap"*; the recap covers exactly the part you jumped over.
 - **Resume recap** — reopening a title you left mid-way shows *Previously…*.
 - **Character card** — *Who's that?* also shows when you first met them, under the name you know them by.
+- **Sport mode** — a title ingested with `--kind sport --rules data/rules/american-football.txt`
+  answers rule questions for a newcomer, and the score is fenced like everything else: at 2:00 of
+  the demo game it says 13-0, not the 34-20 it ends on.
 - **Knowledge bar** — every answer shows the title's timeline: what you've watched, the moments the
   answer draws on, the recapped range, and everything after your position hatched out as
   *hidden from the AI*. Markers are clamped to your position server-side, so even a model citing
@@ -142,6 +145,7 @@ Set these in the environment, or in a gitignored `.env.local` at the repo root
 
 ## Content & licenses
 
-Demo content: *Sintel* © Blender Foundation, CC-BY 3.0 (durian.blender.org). In production this is
+Demo content: *Sintel* © Blender Foundation, CC-BY 3.0 (durian.blender.org); *Oregon vs.
+Washington St* college football highlights © FOX Sports, CC BY 3.0, via Wikimedia Commons. In production this is
 an SDK a streaming app embeds in its own player; the app needs its own playback position, which is
 why the demo plays content itself rather than reading other apps' screens.
